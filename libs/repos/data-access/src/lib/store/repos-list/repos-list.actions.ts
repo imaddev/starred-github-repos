@@ -12,3 +12,13 @@ export const loadReposListFailure = createAction(
   '[ReposList/API] Load ReposList Failure',
   props<{ error: any }>()
 );
+
+export const setPageNbr = createAction(
+  '[ReposList/API] Set Page Number',
+  props<{ page: number }>()
+);
+
+export const loadNextReposListSuccess = createAction(
+  '[ReposList/API] Load Next ReposList Success',
+  props<{ reposList: ReposListEntity[] }>()
+);
