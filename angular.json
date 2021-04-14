@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "starred-github-repos",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "projects": {
+    "starred-github-repos": {
+      "projectType": "application",
+      "root": "apps/starred-github-repos",
+      "sourceRoot": "apps/starred-github-repos/src",
+      "prefix": "bdev",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/starred-github-repos",
+            "index": "apps/starred-github-repos/src/index.html",
+            "main": "apps/starred-github-repos/src/main.ts",
+            "polyfills": "apps/starred-github-repos/src/polyfills.ts",
+            "tsConfig": "apps/starred-github-repos/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/starred-github-repos/src/favicon.ico",
+              "apps/starred-github-repos/src/assets"
+            ],
+            "styles": ["apps/starred-github-repos/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/starred-github-repos/src/environments/environment.ts",
+                  "with": "apps/starred-github-repos/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "starred-github-repos:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "starred-github-repos:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "starred-github-repos:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/starred-github-repos/src/**/*.ts",
+              "apps/starred-github-repos/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/starred-github-repos"],
+          "options": {
+            "jestConfig": "apps/starred-github-repos/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "starred-github-repos-e2e": {
+      "root": "apps/starred-github-repos-e2e",
+      "sourceRoot": "apps/starred-github-repos-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/starred-github-repos-e2e/cypress.json",
+            "tsConfig": "apps/starred-github-repos-e2e/tsconfig.e2e.json",
+            "devServerTarget": "starred-github-repos:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "starred-github-repos:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/starred-github-repos-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
