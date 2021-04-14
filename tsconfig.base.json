@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bdev/repos/feature/list": ["libs/repos/feature/list/src/index.ts"]
+      "@bdev/repos/feature/list": ["libs/repos/feature/list/src/index.ts"],
+      "@bdev/repos/data-access": ["libs/repos/data-access/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

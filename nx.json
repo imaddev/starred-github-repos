@@ -17,6 +17,7 @@
       "tags": [],
       "implicitDependencies": ["starred-github-repos"]
     },
-    "repos-feature-list": { "tags": [] }
+    "repos-feature-list": { "tags": [] },
+    "repos-data-access": { "tags": [] }
   }
 }

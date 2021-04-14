@@ -170,6 +170,31 @@
           }
         }
       }
+    },
+    "repos-data-access": {
+      "projectType": "library",
+      "root": "libs/repos/data-access",
+      "sourceRoot": "libs/repos/data-access/src",
+      "prefix": "bdev",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/repos/data-access/src/**/*.ts",
+              "libs/repos/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/repos/data-access"],
+          "options": {
+            "jestConfig": "libs/repos/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
