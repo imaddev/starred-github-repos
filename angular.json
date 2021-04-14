@@ -145,6 +145,31 @@
           }
         }
       }
+    },
+    "repos-feature-list": {
+      "projectType": "library",
+      "root": "libs/repos/feature/list",
+      "sourceRoot": "libs/repos/feature/list/src",
+      "prefix": "bdev",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/repos/feature/list/src/**/*.ts",
+              "libs/repos/feature/list/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/repos/feature/list"],
+          "options": {
+            "jestConfig": "libs/repos/feature/list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
