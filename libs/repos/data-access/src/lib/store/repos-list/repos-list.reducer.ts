@@ -20,7 +20,7 @@ export const reposListAdapter: EntityAdapter<ReposListEntity> = createEntityAdap
 
 export const initialState: State = reposListAdapter.getInitialState({
   // set initial required properties
-  loaded: false,
+  loaded: false
 });
 
 const reposListReducer = createReducer(
@@ -28,15 +28,24 @@ const reposListReducer = createReducer(
   on(ReposListActions.init, (state) => ({
     ...state,
     loaded: false,
-    error: null,
+    error: null
   })),
   on(ReposListActions.loadReposListSuccess, (state, { reposList }) =>
     reposListAdapter.setAll(reposList, { ...state, loaded: true })
   ),
   on(ReposListActions.loadReposListFailure, (state, { error }) => ({
     ...state,
-    error,
-  }))
+    error
+  })),
+  on(ReposListActions.setPageNbr, (state, { page }) => ({
+    ...state,
+    page,
+    loaded: false,
+    error: null
+  })),
+  on(ReposListActions.loadNextReposListSuccess, (state, {reposList}) =>
+    reposListAdapter.addMany(reposList, {...state, loaded: true})
+  )
 );
 
 export function reducer(state: State | undefined, action: Action) {
