@@ -295,6 +295,31 @@
           }
         }
       }
+    },
+    "shared-ui-navbar": {
+      "projectType": "library",
+      "root": "libs/shared/ui/navbar",
+      "sourceRoot": "libs/shared/ui/navbar/src",
+      "prefix": "bdev",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui/navbar/src/**/*.ts",
+              "libs/shared/ui/navbar/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/navbar"],
+          "options": {
+            "jestConfig": "libs/shared/ui/navbar/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

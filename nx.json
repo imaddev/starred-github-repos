@@ -22,6 +22,7 @@
     "home": { "tags": [] },
     "shared-ui-loader": { "tags": [] },
     "shared-ui-footer": { "tags": [] },
-    "shared-pipes-date": { "tags": [] }
+    "shared-pipes-date": { "tags": [] },
+    "shared-ui-navbar": { "tags": [] }
   }
 }
