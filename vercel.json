@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "myapp",
+  "builds": [
+    { "src": "/dist/apps/starred-github-repos/*", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/(.*).(js|css|ico)", "dest": "/dist/apps/starred-github-repos/$1.$2" },
+    { "src": "/(.*)", "dest": "/dist/apps/starred-github-repos/index.html" }
+  ]
+}
