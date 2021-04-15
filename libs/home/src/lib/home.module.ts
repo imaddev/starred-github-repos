@@ -5,6 +5,7 @@ import { ReposListModule } from '@bdev/repos/feature/list';
 import { FooterModule } from '@bdev/shared/ui/footer';
 
 import { HomeComponent } from './home.component';
+import { NavbarModule } from '@bdev/shared/ui/navbar';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { HomeComponent } from './home.component';
       { path: '', component: HomeComponent }
     ]),
     ReposListModule,
-    FooterModule
+    FooterModule,
+    NavbarModule
   ],
   declarations: [
     HomeComponent
