@@ -11,3 +11,11 @@ trim_trailing_whitespace = true
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+[*.ts]
+ij_typescript_force_quote_style = true
+
+[{*.sht,*.htm,*.html,*.shtm,*.shtml,*.ng}]
+ij_html_quote_style = double
+ij_html_attribute_wrap = split_into_lines
+ij_html_inline_tags = unset
