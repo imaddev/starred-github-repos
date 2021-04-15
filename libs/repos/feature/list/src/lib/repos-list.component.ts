@@ -20,7 +20,7 @@ export class ReposListComponent implements OnInit {
     this.store.dispatch(ReposListActions.init());
   }
 
-  onScroll(): void {
+  onLoadNext(): void {
     this.store.dispatch(ReposListActions.setPageNbr({ page: ++this.page }));
   }
 
