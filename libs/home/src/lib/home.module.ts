@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
-import { ReposListModule } from '@bdev/repos/feature/list';
 import { RouterModule } from '@angular/router';
+import { ReposListModule } from '@bdev/repos/feature/list';
+import { FooterModule } from '@bdev/shared/ui/footer';
+
+import { HomeComponent } from './home.component';
 
 @NgModule({
   imports: [
@@ -10,10 +12,12 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       { path: '', component: HomeComponent }
     ]),
-    ReposListModule
+    ReposListModule,
+    FooterModule
   ],
   declarations: [
     HomeComponent
-  ],
+  ]
 })
-export class HomeModule {}
+export class HomeModule {
+}
