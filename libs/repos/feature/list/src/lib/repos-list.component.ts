@@ -10,12 +10,18 @@ import { ReposListActions, ReposListSelectors } from '@bdev/repos/data-access';
 export class ReposListComponent implements OnInit {
   reposList$ = this.store.select(ReposListSelectors.getAllReposList);
   loaded$ = this.store.select(ReposListSelectors.getReposListLoaded);
+  error$ = this.store.select(ReposListSelectors.getReposListError);
+  page = 1;
 
   constructor(private store: Store) {
   }
 
   ngOnInit(): void {
     this.store.dispatch(ReposListActions.init());
+  }
+
+  onScroll(): void {
+    this.store.dispatch(ReposListActions.setPageNbr({ page: ++this.page }));
   }
 
 }

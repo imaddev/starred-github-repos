@@ -1,5 +1,10 @@
-<bdev-loader *ngIf="(loaded$ | async) === false"></bdev-loader>
-<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+<bdev-loader *ngIf="(loaded$ | async) === false && (error$ | async) === null"></bdev-loader>
+
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8"
+     infiniteScroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="50"
+     (scrolled)="onScroll()">
   <!-- Stacked list -->
   <ul class="divide-y divide-gray-200"
       role="list">
