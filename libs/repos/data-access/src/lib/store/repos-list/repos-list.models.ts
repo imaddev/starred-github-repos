@@ -11,6 +11,6 @@ export interface ReposListEntity {
   description: string;
   stargazers_count: number;
   open_issues_count: number;
-  created_at: Date;
+  created_at: string;
   html_url: string;
 }
