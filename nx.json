@@ -21,6 +21,7 @@
     "repos-data-access": { "tags": [] },
     "home": { "tags": [] },
     "shared-ui-loader": { "tags": [] },
-    "shared-ui-footer": { "tags": [] }
+    "shared-ui-footer": { "tags": [] },
+    "shared-pipes-date": { "tags": [] }
   }
 }

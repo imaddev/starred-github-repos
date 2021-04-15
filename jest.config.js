@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/home',
     '<rootDir>/libs/shared/ui/loader',
     '<rootDir>/libs/shared/ui/footer',
+    '<rootDir>/libs/shared/pipes/date',
   ],
 };

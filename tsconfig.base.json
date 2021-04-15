@@ -19,7 +19,8 @@
       "@bdev/repos/data-access": ["libs/repos/data-access/src/index.ts"],
       "@bdev/home": ["libs/home/src/index.ts"],
       "@bdev/shared/ui/loader": ["libs/shared/ui/loader/src/index.ts"],
-      "@bdev/shared/ui/footer": ["libs/shared/ui/footer/src/index.ts"]
+      "@bdev/shared/ui/footer": ["libs/shared/ui/footer/src/index.ts"],
+      "@bdev/shared/pipes/date": ["libs/shared/pipes/date/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
