@@ -24,4 +24,8 @@ export class ReposListComponent implements OnInit {
     this.store.dispatch(ReposListActions.setPageNbr({ page: ++this.page }));
   }
 
+  toDate(date: string): Date {
+    return new Date(date);
+  }
+
 }
