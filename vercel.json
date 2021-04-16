@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "name": "starred-github-repos",
   "builds": [
-    { "src": "/dist/apps/starred-github-repos/*", "use": "@vercel/static-build" }
-  ],
-  "routes": [
-    { "src": "/(.*).(js|css|ico)", "dest": "/dist/apps/starred-github-repos/$1.$2" },
-    { "src": "/(.*)", "dest": "/dist/apps/starred-github-repos/index.html" }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/apps/starred-github-repos"
+      }
+    }
   ]
 }
