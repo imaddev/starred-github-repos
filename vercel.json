@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "name": "myapp",
+  "name": "starred-github-repos",
   "builds": [
-    { "src": "/dist/apps/starred-github-repos/*", "use": "@now/static" }
+    { "src": "/dist/apps/starred-github-repos/*", "use": "@vercel/static-build" }
   ],
   "routes": [
     { "src": "/(.*).(js|css|ico)", "dest": "/dist/apps/starred-github-repos/$1.$2" },
